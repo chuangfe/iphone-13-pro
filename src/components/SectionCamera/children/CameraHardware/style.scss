@@ -1,0 +1,334 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-hardware {
+  padding-top: 4.375rem;
+  background-color: $black-000000;
+
+  .font-style {
+    .intro {
+      font-size: 3.25rem;
+      font-weight: 600;
+      line-height: 1.17857142854;
+      color: $white-ffffff;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.125;
+      color: $white-ffffff;
+    }
+
+    .text {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      line-height: 1.4287254577;
+      color: $white-ffffff;
+    }
+  }
+
+  .item-style {
+    padding-bottom: 400px;
+    background-size: 275px 575px;
+
+    border-bottom: 10px solid $white-ffffff;
+    background-image: url("../../../../../public/images/section-camera-camera-hardware-small.jpg");
+    background-repeat: no-repeat;
+
+    .text-container {
+      position: relative;
+
+      .title {
+        padding-bottom: 0.5rem;
+      }
+
+      .font-color-yellow {
+        color: $yellow-ffe701;
+      }
+
+      .line {
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        margin-top: 8px;
+        width: 1px;
+        background-color: $white-ffffff;
+      }
+    }
+  }
+
+  .flex-container {
+    .flex-image-container {
+      display: none;
+    }
+  }
+
+  .text-container-1 {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    max-width: 310px;
+
+    .wrap {
+      display: block;
+    }
+  }
+
+  .item-container-1 {
+    margin-bottom: 2.5rem;
+    background-position: center 250px;
+
+    .text-container {
+      margin: 0 auto;
+      max-width: 310px;
+
+      .line {
+        height: 86px;
+        left: 104px;
+      }
+    }
+  }
+
+  .item-container-2 {
+    margin-bottom: 2.5rem;
+    background-position: center 250px;
+
+    .text-container {
+      margin: 0 auto;
+      max-width: 230px;
+      transform: translateX(24px);
+
+      .line {
+        height: 190px;
+        left: 96px;
+      }
+    }
+  }
+
+  .item-container-3 {
+    padding-bottom: 650px;
+    background-position: center 250px;
+
+    .text-container {
+      margin: 0 auto;
+      max-width: 310px;
+
+      .line {
+        height: 200px;
+        left: 102px;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .camera-hardware {
+    padding-top: 7.375rem;
+    position: relative;
+    overflow: hidden;
+
+    .width-container {
+      margin: 0 auto;
+      width: 692px;
+    }
+
+    .font-style {
+      .intro {
+        font-size: 3.625rem;
+        line-height: 1.14583333337;
+      }
+
+      .title {
+        font-size: 1.5rem;
+        line-height: 1.1666666667;
+      }
+
+      .text {
+        font-size: 1.1875rem;
+        line-height: 1.4;
+      }
+    }
+
+    .item-style {
+      border-bottom: 0px;
+      padding-bottom: 0px;
+      background-image: none;
+
+      .text-container {
+        .title {
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.5rem;
+          position: relative;
+
+          &::after {
+            display: block;
+            content: "";
+            width: 600px;
+            height: 1px;
+            background-color: $white-ffffff;
+            position: absolute;
+            left: 0px;
+            top: 100%;
+          }
+        }
+
+        .line {
+          display: none;
+        }
+      }
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+
+      .flex-text-container {
+        width: 35%;
+      }
+
+      .flex-image-container {
+        display: block;
+        width: 60%;
+      }
+    }
+
+    .text-container-1 {
+      padding-left: 10.8125rem;
+      padding-bottom: 3.75rem;
+      max-width: none;
+
+      .wrap:nth-child(2) {
+        transform: translateX(calc(1em * -1.2));
+      }
+    }
+
+    .item-container-1 {
+      margin-bottom: 3rem;
+      padding-top: 3.125rem;
+
+      .text-container {
+        max-width: none;
+
+        .title {
+          &::after {
+            width: 470px;
+          }
+        }
+      }
+    }
+
+    .item-container-2 {
+      margin-bottom: 3rem;
+
+      .text-container {
+        margin: 0 auto;
+        max-width: none;
+        transform: translateX(0px);
+      }
+    }
+
+    .item-container-3 {
+      padding-bottom: 0px;
+
+      .text-container {
+        margin: 0 auto;
+        max-width: none;
+
+        .title {
+          &::after {
+            width: 470px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-lg) {
+  .camera-hardware {
+    padding-top: 7.75rem;
+
+    .width-container {
+      width: 980px;
+    }
+
+    .font-style {
+      .intro {
+        font-size: 5.375rem;
+        line-height: 1.1;
+      }
+
+      .title {
+        font-size: 2rem;
+        line-height: 1.125;
+      }
+    }
+
+    .flex-container {
+      .flex-text-container {
+        width: 40%;
+      }
+
+      .flex-image-container {
+        width: 60%;
+      }
+    }
+
+    .text-container-1 {
+      padding-left: 20.375rem;
+      padding-bottom: 8.25rem;
+    }
+
+    .item-container-1 {
+      margin-bottom: 2.5rem;
+      padding-top: 9.25rem;
+
+      .text-container {
+        .title {
+          &::after {
+            width: 604px;
+          }
+        }
+      }
+    }
+
+    .item-container-2 {
+      margin-bottom: 2.5rem;
+
+      .text-container {
+        margin: 0 auto;
+        max-width: none;
+        transform: translateX(50%);
+
+        .title {
+          &::after {
+            width: 624px;
+          }
+        }
+      }
+    }
+
+    .item-container-3 {
+      padding-bottom: 0px;
+
+      .text-container {
+        margin: 0 auto;
+        max-width: none;
+
+        .title {
+          &::after {
+            width: 640px;
+          }
+        }
+      }
+    }
+  }
+}

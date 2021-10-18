@@ -1,0 +1,77 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-storage {
+  padding-top: 8.0625rem;
+  padding-bottom: 9.0625rem;
+  background-color: $white-fbfbfd;
+  overflow: hidden;
+
+  .font-style {
+    .title {
+      font-size: 11.875rem;
+      font-weight: 600;
+      line-height: 1.4287254577;
+    }
+
+    .text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4287254577;
+    }
+  }
+
+  .text-container-2 {
+    text-align: center;
+  }
+
+  .text-container-3 {
+    text-align: right;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .camera-storage {
+    padding-top: 7.1875rem;
+    padding-bottom: 8rem;
+
+    .font-style {
+      .title {
+        font-size: 22rem;
+        line-height: 1.4;
+      }
+
+      .text {
+        font-size: 2rem;
+        line-height: 1.2100517647;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .camera-storage {
+    padding-top: 6.875rem;
+    padding-bottom: 8.125rem;
+
+    .font-style {
+      .title {
+        font-size: 30rem;
+        line-height: 1.4;
+      }
+
+      .text {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}

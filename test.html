@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        padding-bottom: 100vh;
+        height: 300vh;
+      }
+    </style>
+
+    <style>
+      .video-sticky-container {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+
+        position: sticky;
+        left: 0px;
+        top: 0px;
+      }
+
+      .video-scale-container {
+        width: 100%;
+        height: 100%;
+        transform: scale(100%);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+
+      .video-container {
+        background-image: url("./public/images/section-camera-cinematic-mode-screen-small-2x.png");
+
+        /* background-image: url("./public/images/section-camera-cinematic-mode-hardware-zoomed-large.png"); */
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-origin: border-box;
+
+        transform: translateX(-50%);
+        position: relative;
+        left: 50%;
+        top: 0px;
+      }
+
+      .video-container video {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-sticky-container">
+      <div class="video-scale-container">
+        <div class="video-container">
+          <video
+            src="./public/videos/section-camera-mode-screen-small-2x.mp4"
+            loop="loop"
+          ></video>
+
+          <!-- <video
+              src="./public/videos/section-camera-mode-screen-large-2x.mp4"
+              loop="loop"
+            ></video> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const videoStickyContainer = document.querySelector(".video-scale-container");
+  const videoContainer = document.querySelector(".video-container");
+  const video = document.querySelector("video");
+
+  const verticalData = {
+    imageContentWidth: 622,
+    imageContentHeight: 893,
+    paddingTop: 179,
+    paddingBottom: 352,
+    paddingLeft: 41,
+    paddingRight: 41,
+    videoFit: "contain",
+  };
+
+  const horizontalData = {
+    imageContentWidth: 1211,
+    imageContentHeight: 461,
+    paddingTop: 101,
+    paddingBottom: 165,
+    paddingLeft: 80,
+    paddingRight: 186,
+    // 橫螢幕的影片寬高比例不好, 故使用 cover 樣式.
+    videoFit: "cover",
+  };
+
+  /**
+   * el 是 video 的 container 容器.
+   * imageContentWidth imageContentHeight 是背景圖片中間顯示影片的區域.
+   * padding 是背景圖片顯示影片區域以外的背景.
+   */
+  function setPadding(
+    el,
+    {
+      imageContentWidth,
+      imageContentHeight,
+      paddingTop,
+      paddingBottom,
+      paddingLeft,
+      paddingRight,
+      videoFit,
+    }
+  ) {
+    // 計算 videoContainer 顯示影片的區域的寬高.
+    el.style.width = "100vw";
+    el.style.height = "100vh";
+    el.style.aspectRatio = imageContentWidth + "/" + imageContentHeight;
+    el.querySelector("video").style.objectFit = videoFit;
+
+    // 判斷顯示影片區與 100vw 100vh 的差距.
+    if (
+      window.innerWidth / imageContentWidth >
+      window.innerHeight / imageContentHeight
+    ) {
+      // 寬度不夠, 高度剛好.
+      el.style.width = "100vw";
+      el.style.height = "auto";
+    }
+    // 高度不夠, 寬度剛好.
+    else {
+      el.style.width = "auto";
+      el.style.height = "100vh";
+    }
+
+    // 顯示影片區需要大於 100vw 100vh 的值.
+    const offsetWidth = el.offsetWidth,
+      offsetHeight = el.offsetHeight;
+
+    el.style.width = offsetWidth + "px";
+    el.style.height = offsetHeight + "px";
+    el.style.aspectRatio = "auto";
+
+    // 使用 padding 把顯示影片區以外的背景圖片推出去.
+    // 使用 background-origin: border-box; 樣式.
+    const topCalc = (paddingTop / imageContentHeight) * offsetHeight,
+      bottomCalc = (paddingBottom / imageContentHeight) * offsetHeight,
+      leftCalc = (paddingLeft / imageContentWidth) * offsetWidth,
+      rightCalc = (paddingRight / imageContentWidth) * offsetWidth;
+
+    el.style.paddingLeft = leftCalc + "px";
+    el.style.paddingRight = rightCalc + "px";
+
+    el.style.paddingTop = topCalc + "px";
+    el.style.paddingBottom = bottomCalc + "px";
+
+    // 讓影片顯示區靠在最上方, 水平置中使用 style 調整.
+    el.style.marginTop = `-${topCalc}px`;
+  }
+
+  setPadding(videoContainer, verticalData);
+  // setPadding(videoContainer, horizontalData);
+</script>

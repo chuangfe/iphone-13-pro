@@ -1,0 +1,232 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-zoom {
+  padding-top: 4.6rem;
+  padding-bottom: 3.125rem;
+  overflow: hidden;
+
+  .grid-container {
+    max-width: 390px;
+    display: grid;
+    grid-template-columns: 1fr 166px 1fr;
+    grid-template-rows: repeat(5, auto) 120px auto;
+  }
+
+  .text-container {
+    .intro {
+      font-size: 3.25rem;
+      font-weight: 600;
+      line-height: 1.178;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.27;
+    }
+
+    .text {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      line-height: 1.428;
+      color: $gray-6e6e73;
+    }
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid-text-container-1 {
+    grid-column: 1 / calc(3 + 1);
+    grid-row: 1 / calc(1 + 1);
+    padding: 3.125rem 0;
+  }
+
+  .grid-text-container-2 {
+    grid-column: 1 / calc(3 + 1);
+    grid-row: 3 / calc(3 + 1);
+    padding-top: 1.875rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .grid-text-container-3 {
+    grid-column: 1 / calc(3 + 1);
+    grid-row: 4 / calc(4 + 1);
+    padding-bottom: 4.375rem;
+
+    .wrap:last-child {
+      display: block;
+    }
+
+    .list-item:first-child {
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  .grid-image-container-1 {
+    grid-column: 1 / calc(3 + 1);
+    grid-row: 2 / calc(2 + 1);
+    justify-content: center;
+  }
+
+  .grid-image-container-2 {
+    grid-column: 1 / calc(2 + 1);
+    grid-row: 5 / calc(6 + 1);
+    justify-content: flex-start;
+  }
+
+  .grid-image-container-3 {
+    grid-column: 2 / calc(3 + 1);
+    grid-row: 6 / calc(7 + 1);
+    justify-content: flex-end;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media only screen and (min-width: $view-width-md) {
+  .camera-zoom {
+    padding-top: 4.7rem;
+    padding-bottom: 8.4375rem;
+
+    .grid-container {
+      max-width: none;
+      grid-template-columns: 284px minmax(62px, 1fr) 346px;
+      grid-template-rows: auto 65px minmax(260px, auto) 60px auto;
+    }
+
+    .text-container {
+      .intro {
+        font-size: 3.625rem;
+        line-height: 1.1458;
+      }
+
+      .title {
+        font-size: 3.5rem;
+        line-height: 1.21;
+      }
+
+      .text {
+        font-size: 1.1875rem;
+        line-height: 1.4;
+      }
+    }
+
+    .grid-text-container-1 {
+      grid-column: 3 / calc(3 + 1);
+      grid-row: 1 / calc(1 + 1);
+      padding: 6.25rem 3.125rem 2.8125rem;
+    }
+
+    .grid-text-container-2 {
+      grid-column: 1 / calc(1 + 1);
+      grid-row: 3 / calc(3 + 1);
+      padding: 3.125rem 3.4375rem 3.125rem 0;
+    }
+
+    .grid-text-container-3 {
+      grid-column: 3 / calc(3 + 1);
+      grid-row: 5 / calc(5 + 1);
+      padding-left: 3.125rem;
+      padding-bottom: 0px;
+      align-self: center;
+
+      .title {
+        padding-bottom: 0.75rem;
+        white-space: nowrap;
+      }
+
+      .wrap {
+        display: block;
+      }
+
+      .list-item:first-child {
+        padding-bottom: 2.5rem;
+      }
+    }
+
+    .grid-image-container-1 {
+      grid-column: 2 / calc(3 + 1);
+      grid-row: 2 / calc(4 + 1);
+      justify-content: flex-start;
+    }
+
+    .grid-image-container-2 {
+      grid-column: 1 / calc(2 + 1);
+      grid-row: 1 / calc(2 + 1);
+      justify-content: flex-end;
+    }
+
+    .grid-image-container-3 {
+      grid-column: 1 / calc(2 + 1);
+      grid-row: 4 / calc(5 + 1);
+      justify-content: flex-end;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media only screen and (min-width: $view-width-lg) {
+  .camera-zoom {
+    padding-top: 8.6375rem;
+    padding-bottom: 8.4375rem;
+
+    .grid-container {
+      grid-template-columns: 369px minmax(124px, 1fr) 487px;
+      grid-template-rows: auto 80px minmax(260px, auto) 172px auto;
+    }
+
+    .text-container {
+      .intro {
+        font-size: 5.375rem;
+        line-height: 1.1;
+      }
+
+      .title {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+
+    .grid-text-container-1 {
+      grid-column: 3 / calc(3 + 1);
+      grid-row: 1 / calc(1 + 1);
+      padding: 3.125rem 3.125rem 5rem 3.125rem;
+      align-self: flex-end;
+    }
+
+    .grid-text-container-2 {
+      grid-column: 1 / calc(1 + 1);
+      grid-row: 3 / calc(3 + 1);
+      padding: 3.125rem 3.125rem 3.125rem 0;
+      align-self: center;
+    }
+
+    .grid-text-container-3 {
+      grid-column: 3 / calc(3 + 1);
+      grid-row: 5 / calc(5 + 1);
+      padding-left: 5.0625rem;
+      align-self: center;
+
+      .title {
+        padding-bottom: 0.625rem;
+      }
+
+      .wrap {
+        display: block;
+      }
+
+      .list-item:first-child {
+        padding-bottom: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,197 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-truedepth {
+  padding-top: 4.375rem;
+  overflow: hidden;
+
+  .shared-container {
+    position: relative;
+  }
+
+  .font-style {
+    .intro {
+      font-size: 3.25rem;
+      font-weight: 600;
+      line-height: 1.17857142854;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2705;
+    }
+
+    .text {
+      font-size: 1.1875rem;
+      font-weight: 600;
+      line-height: 1.2492;
+      color: $gray-6e6e73;
+    }
+  }
+
+  .text-container-1 {
+    padding-bottom: 4.625rem;
+
+    .title {
+      padding-bottom: 1.5125rem;
+
+      .wrap:first-child {
+        display: block;
+      }
+    }
+  }
+
+  .text-container-2 {
+    position: absolute;
+    left: 0px;
+    top: 68%;
+
+    .intro {
+      padding-bottom: 2.2875rem;
+      max-width: 365px;
+
+      .wrap {
+        display: block;
+      }
+    }
+
+    .title {
+      width: 83%;
+    }
+  }
+
+  .image-container {
+    position: relative;
+    left: 100px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .camera-truedepth {
+    padding-top: 8.375rem;
+
+    .font-style {
+      .intro {
+        font-size: 3.625rem;
+        line-height: 1.14583333337;
+      }
+
+      .title {
+        font-size: 2rem;
+        line-height: 1.2100517647;
+      }
+
+      .text {
+        line-height: 1.1846;
+      }
+    }
+
+    .text-container-1 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      .title {
+        width: 52%;
+
+        .wrap:first-child {
+          display: inline;
+        }
+      }
+    }
+
+    .text-container-2 {
+      position: absolute;
+      left: 0px;
+      top: 40%;
+
+      .intro {
+        padding-bottom: 2.2875rem;
+
+        .wrap {
+          display: block;
+        }
+      }
+
+      .title {
+        width: 50%;
+        font-size: 1.5rem;
+        line-height: 1.4;
+      }
+    }
+
+    .image-container {
+      left: 65%;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-lg) {
+  .camera-truedepth {
+    .font-style {
+      .intro {
+        font-size: 5.375rem;
+        line-height: 1.1;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+
+      .text {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+    }
+
+    .text-container-1 {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+
+      .title {
+        padding-bottom: 1.7625rem;
+        width: 52%;
+
+        .wrap:first-child {
+          display: inline;
+        }
+      }
+    }
+
+    .text-container-2 {
+      position: absolute;
+      left: 0px;
+      top: 45%;
+
+      .intro {
+        padding-bottom: 5.375rem;
+        max-width: none;
+
+        .wrap {
+          display: block;
+        }
+      }
+
+      .title {
+        width: 40%;
+        font-size: 1.5rem;
+        line-height: 1.4;
+      }
+    }
+
+    .image-container {
+      left: 65%;
+    }
+  }
+}

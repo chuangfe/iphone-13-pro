@@ -1,0 +1,45 @@
+$flaticon-font: "flaticon";
+
+@font-face {
+    font-family: $flaticon-font;
+    src: url("./flaticon.ttf?f66b5cdd638c16b9c483ac98143bb980") format("truetype"),
+url("./flaticon.woff?f66b5cdd638c16b9c483ac98143bb980") format("woff"),
+url("./flaticon.woff2?f66b5cdd638c16b9c483ac98143bb980") format("woff2"),
+url("./flaticon.eot?f66b5cdd638c16b9c483ac98143bb980#iefix") format("embedded-opentype"),
+url("./flaticon.svg?f66b5cdd638c16b9c483ac98143bb980#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon-map: (
+    "cancel": "\f101",
+    "bag": "\f102",
+    "apple": "\f103",
+    "loupe": "\f104",
+    "menu": "\f105",
+);
+
+.flaticon-cancel:before {
+    content: map-get($flaticon-map, "cancel");
+}
+.flaticon-bag:before {
+    content: map-get($flaticon-map, "bag");
+}
+.flaticon-apple:before {
+    content: map-get($flaticon-map, "apple");
+}
+.flaticon-loupe:before {
+    content: map-get($flaticon-map, "loupe");
+}
+.flaticon-menu:before {
+    content: map-get($flaticon-map, "menu");
+}

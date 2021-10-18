@@ -1,0 +1,24 @@
+<section class="section-hero">
+  <transition name="video">
+    <div class="video-container" v-show="!isEnded">
+      <video class="video" muted="muted"></video>
+    </div>
+  </transition>
+
+  <h3 class="title" :style="{ 'animation-play-state': getRunning }">
+    iPhone 13 Pro
+  </h3>
+
+  <div class="image-container" :class="{ended:isEnded}">
+    <img
+      src="../../../public/images/section-hero-background.jpg"
+      alt="section-hero-background"
+      class="image"
+    />
+  </div>
+
+  <div class="content-container">
+    <h1>iPhone 13 Pro</h1>
+    <h2>就。很。Pro</h2>
+  </div>
+</section>

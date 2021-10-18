@@ -1,0 +1,222 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-computational-photography {
+  padding-top: 4.0625rem;
+  padding-bottom: 4.6875rem;
+  background-color: $white-fbfbfd;
+  overflow: hidden;
+
+  .font-style-container {
+    .intro {
+      font-size: 3.25rem;
+      font-weight: 600;
+      line-height: 1.17857142854;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.2727;
+    }
+
+    .text {
+      font-size: 1.0625;
+      font-weight: 600;
+      line-height: 1.4287254577;
+      color: $gray-6e6e73;
+    }
+  }
+
+  .picture-style-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-container-1 {
+    padding-bottom: 2.4125rem;
+  }
+
+  .image-container-1 {
+    padding-bottom: 3.125rem;
+  }
+
+  .text-container-2 {
+    padding-bottom: 3.125rem;
+
+    .title {
+      padding-bottom: 1.25rem;
+    }
+
+    .wrap {
+      display: block;
+    }
+  }
+
+  .image-container-2 {
+    padding-bottom: 1.5625rem;
+  }
+
+  .flex-container-1 {
+    .text-container-3 {
+      padding-bottom: 3.125rem;
+
+      .title {
+        padding-bottom: 1.25rem;
+
+        .wrap:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .camera-computational-photography {
+    padding-top: 7.3125rem;
+    padding-bottom: 6.25rem;
+
+    .font-style-container {
+      .intro {
+        font-size: 3.625rem;
+        line-height: 1.14583333337;
+      }
+
+      .title {
+        font-size: 2rem;
+        line-height: 1.3636;
+      }
+
+      .text {
+        font-size: 1.1875rem;
+        line-height: 1.4;
+      }
+    }
+
+    .text-container-1 {
+      padding-bottom: 3.2rem;
+
+      .wrap {
+        display: block;
+      }
+    }
+
+    .image-container-1 {
+      padding-bottom: 3.625rem;
+    }
+
+    .text-container-2 {
+      padding-bottom: 6.25rem;
+      display: flex;
+
+      .title {
+        flex-basis: 41%;
+        padding-bottom: 0px;
+
+        .wrap {
+          display: block;
+        }
+      }
+
+      .text {
+        padding-left: 3.625rem;
+        flex-basis: 59%;
+      }
+    }
+
+    .image-container-2 {
+      padding-bottom: 3.625rem;
+    }
+
+    .flex-container-1 {
+      padding-bottom: 6.25rem;
+      display: flex;
+
+      .text-container-3 {
+        padding-bottom: 0px;
+        flex-basis: 50%;
+
+        .title {
+          padding-bottom: 1.8125rem;
+
+          .wrap:first-child {
+            display: inline;
+          }
+        }
+      }
+
+      .image-container-3 {
+        transform: translateX(3.625rem);
+        flex-basis: 50%;
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-lg) {
+  .camera-computational-photography {
+    padding-top: 7.0625rem;
+    padding-bottom: 6.25rem;
+
+    .font-style-container {
+      .intro {
+        font-size: 5.375rem;
+        line-height: 1.1;
+      }
+
+      .title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+    }
+
+    .text-container-1 {
+      padding-bottom: 5.075rem;
+    }
+
+    .image-container-1 {
+      padding-bottom: 4.5rem;
+    }
+
+    .text-container-2 {
+      .title {
+        flex-basis: 33.333333%;
+      }
+
+      .text {
+        padding-left: 16.666666%;
+        flex-basis: 66.666666;
+        box-sizing: border-box;
+      }
+    }
+
+    .image-container-2 {
+      padding-bottom: 4.625rem;
+    }
+
+    .flex-container-1 {
+      padding-bottom: 6.25rem;
+
+      .text-container-3 {
+        .title {
+          padding-bottom: 2rem;
+        }
+      }
+
+      .image-container-3 {
+        transform: translateX(0px);
+        justify-content: flex-end;
+      }
+    }
+  }
+}

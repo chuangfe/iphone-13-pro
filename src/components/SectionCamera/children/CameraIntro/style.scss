@@ -1,0 +1,72 @@
+@import "../../../../assets/style/variable.scss";
+@import "../../../../assets/style/class.scss";
+
+.camera-intro {
+  padding: 10vh 0;
+  background-color: $white-fbfbfd;
+
+  .text-container {
+    padding-top: 50vh;
+    padding-bottom: 10vh;
+
+    .text {
+      font-size: 1.875rem;
+      font-weight: 600;
+      line-height: 1.2331;
+      color: $gray-86868b;
+
+      strong {
+        color: $black-1d1d1f;
+      }
+    }
+  }
+
+  .image-container {
+    display: block;
+    width: 100%;
+    transform: matrix(1, 0, 0, 1, 0, 50);
+    position: sticky;
+    left: 0px;
+    bottom: 0px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media only screen and (min-width: $view-width-md) {
+  .camera-intro {
+    padding: 20vh 0;
+
+    .text-container {
+      padding-bottom: 20vh;
+
+      .text {
+        font-size: 3.6875rem;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media only screen and (min-width: $view-width-lg) {
+  .camera-intro {
+    padding: 30vh 0;
+
+    .text-container {
+      padding-bottom: 30vh;
+
+      .text {
+        font-size: 4.625rem;
+      }
+    }
+  }
+}

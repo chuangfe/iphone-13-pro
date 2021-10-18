@@ -1,0 +1,81 @@
+@import "../../assets/style/variable.scss";
+
+.section-manifesto {
+  height: 400vh;
+  position: relative;
+
+  .video-container {
+    height: 100vh;
+    overflow: hidden;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateX(-50%);
+      position: absolute;
+      left: 50%;
+      top: 0px;
+    }
+  }
+
+  .content-container {
+    padding: 20rem 6%;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+
+    // 主要特點.
+    .key-features {
+      font-size: 0px;
+
+      li {
+        font-size: 2rem;
+        font-weight: 900;
+        color: rgba($section-manifesto-color-white, 0.25);
+        line-height: 1.2;
+        display: inline;
+
+        &.active {
+          color: $white;
+        }
+      }
+    }
+
+    // 排版區.
+    .typography-container {
+      color: rgba($section-manifesto-color-white, 0.25);
+
+      &.active {
+        color: $white;
+      }
+
+      .typography-super {
+        padding: 2rem 0;
+        font-size: 2rem;
+        font-weight: 900;
+      }
+
+      .typography-text {
+        padding-bottom: 1.2rem;
+        font-size: 1.2rem;
+      }
+
+      // 連結區.
+      .typography-links {
+        li {
+          display: inline-block;
+
+          &:first-child {
+            margin-right: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "./variable.scss";
+
+// 容器寬度限制.
+// 0px ~ 734px, 有些容器可能會在這個階段設置 max-width: 390px; 需要注意.
+.shared-container {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  width: 87.5%;
+}
+
+// 734px 以上.
+@media only screen and (min-width: $view-width-md) {
+  .shared-container {
+    width: 692px;
+  }
+}
+
+// 1068px 以上.
+@media only screen and (min-width: $view-width-lg) {
+  .shared-container {
+    width: 980px;
+  }
+}
