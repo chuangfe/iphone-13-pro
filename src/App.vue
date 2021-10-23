@@ -3,8 +3,8 @@
     <transition name="mask">
       <div
         class="mask-local"
-        v-show="isMenu"
-        @click="isMenu = isFocus = false"
+        v-show="isMask"
+        @click="isMask = isMenu = isFocus = isLocal = false"
       ></div>
     </transition>
 
@@ -24,7 +24,6 @@
         :isLoaded="isLoaded"
       />
     </main>
-    <div class="mask-local" v-show="isLocal" @click="isLocal = false"></div>
   </div>
 </template>
 
@@ -38,6 +37,7 @@ export default {
 
   data() {
     return {
+      isMask: false,
       isMenu: false,
       isFocus: false,
       isLocal: false,
@@ -54,20 +54,20 @@ export default {
 
   methods: {
     setMenuHandler(val) {
-      this.isMenu = val;
+      this.isMask = this.isMenu = val;
     },
     setFocusHandler(val) {
       this.isFocus = val;
     },
 
     setLocalHandler(val) {
-      this.isLocal = val;
+      this.isMask = this.isLocal = val;
     },
 
     windowScrollHandler(e) {
       if (e.currentTarget !== window) return false;
 
-      this.isLocal = false;
+      this.isMask = this.isMenu = this.isFocus = this.isLocal = false;
       this.windowTop = window.scrollY;
       this.windowCenter = window.scrollY + Math.floor(window.innerHeight / 2);
       this.windowBottom = window.scrollY + window.innerHeight;
@@ -142,6 +142,6 @@ export default {
 .mask-enter-active,
 // 離場動畫.
 .mask-leave-active {
-  transition: opacity 0.6s ease 0s;
+  transition: opacity 0.4s ease;
 }
 </style>
