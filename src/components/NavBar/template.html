@@ -1,0 +1,139 @@
+<nav class="nav-bar">
+  <div
+    class="mobile-container"
+    :class="{ menu: isMenu }"
+    @transitionend.self="positionContainerTransitionendHandler($event)"
+  >
+    <div class="content-container" :class="{ focus: isFocus }">
+      <!-- icons 區域. -->
+      <div class="icons-container">
+        <div class="justify-between-container">
+          <button @click="setMenuHandler">
+            <i
+              class="icon-style"
+              :class="{ 'flaticon-menu': !isMenu, 'flaticon-cancel': isMenu }"
+            ></i>
+          </button>
+        </div>
+
+        <div class="justify-between-container">
+          <i class="icon-style flaticon-apple"></i>
+        </div>
+
+        <div class="justify-between-container">
+          <i class="icon-style flaticon-bag" :class="{ menu: isMenu }"></i>
+        </div>
+      </div>
+
+      <!-- 搜尋區域. -->
+      <div class="search-container" :class="{focus: isFocus}">
+        <div class="padding-container">
+          <input type="text" class="search" @focus="searchFocusHandler" />
+
+          <i class="flaticon-loupe"></i>
+
+          <button class="search-close" @click="$emit('setFocus', false)">
+            取消
+          </button>
+        </div>
+      </div>
+
+      <!-- 導航列表. -->
+      <div class="list-container">
+        <transition-group
+          name="list-focus"
+          tag="div"
+          class="transition-container"
+        >
+          <div class="blur-container" key="blur" v-show="!isFocus">
+            <ul class="list">
+              <li>商店</li>
+              <li>MAC</li>
+              <li>iPad</li>
+              <li>iPhone</li>
+              <li>Watch</li>
+              <li>TV</li>
+              <li>Music</li>
+              <li>支援服務</li>
+            </ul>
+          </div>
+
+          <div class="focus-container" key="focus" v-show="isFocus">
+            <h3>快速連結</h3>
+            <ul class="list">
+              <li>尋找直營店</li>
+              <li>Apple 直營店線上選購</li>
+              <li>配件</li>
+              <li>AirPosd</li>
+              <li>AirTag</li>
+            </ul>
+          </div>
+        </transition-group>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-container">
+    <div class="shared-container">
+      <ul class="list">
+        <li class="list-item">
+          <i class="icon-style flaticon-apple"></i>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">商店</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">Mac</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">iPad</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">iPhone</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">Watch</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">AirPods</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">Tv 和家庭</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">Apple 獨家</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">配件</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">支援服務</a>
+        </li>
+
+        <li class="list-item">
+          <a href="javascript:;" class="link">商店</a>
+        </li>
+
+        <li class="list-item">
+          <button>
+            <i class="icon-style flaticon-loupe"></i>
+          </button>
+        </li>
+
+        <li class="list-item">
+          <i class="icon-style flaticon-bag"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
