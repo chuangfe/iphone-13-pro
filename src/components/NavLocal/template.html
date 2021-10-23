@@ -1,0 +1,44 @@
+<nav class="nav-local">
+  <div class="mobile-container" :class="{local: isLocal}">
+    <div class="shared-container">
+      <div class="title-container">
+        <div class="title">
+          <p>iPhone 13 Pro</p>
+        </div>
+
+        <div class="function">
+          <button @click="$emit('setLocal', !isLocal)">
+            <span>導航</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="list-container">
+        <ul class="list">
+          <li class="list-item">概覽</li>
+          <li class="list-item">轉用 iPhone</li>
+          <li class="list-item">技術規格</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pc-container">
+    <div class="shared-container">
+      <div class="content-container">
+        <div class="title-container">
+          <p>iPhone 13 Pro</p>
+        </div>
+
+        <div class="list-container">
+          <ul class="list">
+            <li class="list-item">概覽</li>
+            <li class="list-item">轉用 iPhone</li>
+            <li class="list-item">技術規格</li>
+            <li class="list-item"><span class="button">導航</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

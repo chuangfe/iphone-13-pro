@@ -1,0 +1,135 @@
+@import "../../assets/style/variable.scss";
+@import "../../assets/style/class.scss";
+
+.nav-local {
+  display: block;
+  position: sticky;
+  left: 0px;
+  top: 0px;
+  z-index: 100;
+
+  .mobile-container {
+    height: 3rem;
+    background-color: $white-ffffff;
+    border-bottom: 1px solid rgba($black-000000, 0.4);
+    box-sizing: border-box;
+    transition: height 0.4s ease 0s, background-color 0.4s ease 0s;
+    overflow: hidden;
+    display: block;
+
+    &.local {
+      // 3 + 0.5 + 1.5 + 2.75 * 3
+      height: 13.25rem;
+      background-color: rgba($white-ffffff, 0.9);
+    }
+
+    .title-container {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+
+      .title {
+        width: 50%;
+
+        p {
+          font-size: 1.1875rem;
+          font-weight: 600;
+        }
+      }
+
+      .function {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+          display: block;
+          padding: 0.25rem 0.75rem;
+          background-color: $blue-0071e3;
+          color: $white-ffffff;
+          border-radius: 10px;
+        }
+      }
+    }
+
+    .list-container {
+      padding: 0.5rem 1.5rem 1.5rem;
+      height: 10.25rem;
+      box-sizing: border-box;
+      position: relative;
+
+      .list-item {
+        height: 2.75rem;
+        line-height: 2.75rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.286);
+        box-sizing: border-box;
+
+        &:last-child {
+          border-bottom: transparent;
+        }
+      }
+    }
+  }
+
+  .pc-container {
+    display: none;
+    background-color: $white-ffffff;
+    border-bottom: 1px solid rgba($black-000000, 0.4);
+
+    .content-container {
+      height: 3.25rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title-container {
+        p {
+          font-size: 1.3125rem;
+          font-weight: 600;
+        }
+      }
+
+      .list-container {
+        .list {
+          display: flex;
+
+          .list-item {
+            padding-right: 1.5rem;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+              padding-right: 0rem;
+            }
+
+            .button {
+              display: block;
+              padding: 0.25rem 0.75rem;
+              background-color: $blue-0071e3;
+              color: $white-ffffff;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+@media screen and (min-width: $view-width-md) {
+  .nav-local {
+    .mobile-container {
+      display: none;
+    }
+
+    .pc-container {
+      display: block;
+    }
+  }
+}

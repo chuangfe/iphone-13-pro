@@ -15,6 +15,8 @@
       @setFocus="setFocusHandler"
     />
 
+    <NavLocal :isLocal="isLocal" @setLocal="setLocalHandler" />
+
     <main class="main">
       <SectionCamera
         :windowCenter="windowCenter"
@@ -22,12 +24,14 @@
         :isLoaded="isLoaded"
       />
     </main>
+    <div class="mask-local" v-show="isLocal" @click="isLocal = false"></div>
   </div>
 </template>
 
 <script>
 import SectionCamera from "./components/SectionCamera/index";
 import NavBar from "./components/NavBar/index";
+import NavLocal from "./components/NavLocal/index";
 
 export default {
   name: "App",
@@ -36,6 +40,7 @@ export default {
     return {
       isMenu: false,
       isFocus: false,
+      isLocal: false,
 
       // 等所有 el 樣式固定後, 再次修改值.
       isLoaded: 0,
@@ -55,14 +60,15 @@ export default {
       this.isFocus = val;
     },
 
-    windowScrollHandler(e) {
-      if (e.currentTarget !== window) return false;
+    setLocalHandler(val) {
+      this.isLocal = val;
     },
 
     windowScrollHandler(e) {
       if (e.currentTarget !== window) return false;
 
       this.isLocal = false;
+
       this.windowTop = window.scrollY;
       this.windowCenter = window.scrollY + Math.floor(window.innerHeight / 2);
       this.windowBottom = window.scrollY + window.innerHeight;
@@ -72,6 +78,7 @@ export default {
   components: {
     SectionCamera,
     NavBar,
+    NavLocal,
   },
 
   mounted() {
@@ -105,7 +112,7 @@ export default {
 @import "./assets/style/class.scss";
 
 #app {
-  padding-bottom: 5000px;
+  height: 500vh;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 
   // 因為 NavBar NavLocal .mask-local 需要 body 的 height: 100%; 所以不能讓 #app 有 position: relative;
