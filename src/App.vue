@@ -68,7 +68,6 @@ export default {
       if (e.currentTarget !== window) return false;
 
       this.isLocal = false;
-
       this.windowTop = window.scrollY;
       this.windowCenter = window.scrollY + Math.floor(window.innerHeight / 2);
       this.windowBottom = window.scrollY + window.innerHeight;

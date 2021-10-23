@@ -12,9 +12,9 @@ $cubic-bezier-2: cubic-bezier(0.52, 0.16, 0.24, 1);
   .mobile-container {
     width: 100%;
     height: 3rem;
-    background-color: rgba($color: $black-000000, $alpha: 0.8);
+    background-color: $black-1f1f1f;
 
-    transition: background-color 0.44s 0.2s $cubic-bezier-2,
+    transition: background-color 0.44s $cubic-bezier-2,
       height 0.56s $cubic-bezier-2;
 
     position: absolute;
@@ -26,8 +26,8 @@ $cubic-bezier-2: cubic-bezier(0.52, 0.16, 0.24, 1);
     &.menu {
       height: 100%;
       background-color: $black-000000;
-      transition: background-color 0.36s $cubic-bezier-2 0.4s,
-        height 0.56s $cubic-bezier-1 0s;
+      transition: background-color 0.36s $cubic-bezier-2,
+        height 0.56s $cubic-bezier-1;
     }
 
     // 在 search input focus 時, 執行動畫的容器.
